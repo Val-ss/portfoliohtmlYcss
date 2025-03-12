@@ -1,0 +1,953 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+
+
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye mejor los elementos */
+    background-color: #e4e3e3;
+    height: 70px;
+    padding: 5px 20px; /* Agrega espacio en los lados */
+    max-width: 100%;
+    flex-wrap: wrap; /* Para que no se rompa en pantallas pequeñas */
+}
+
+
+
+.navbar__inicio {
+    flex: 1; /* Se ajusta dinámicamente */
+    padding: 9px;
+    min-width: 150px; /* Evita que se vuelva muy pequeño */
+}
+
+.navbar__links {
+    display: flex;
+    gap: 15px; /* Espacio entre enlaces */
+    flex-wrap: wrap; /* Se acomoda en dispositivos pequeños */
+}
+
+
+.navbar__link {
+    margin: 7px;
+    text-decoration: none;
+    color: #a35f05;
+    font-size: 1rem; /* Usa unidades relativas */
+}
+
+.navbar__link:hover {
+    color:#d1b78f;
+}
+
+/* ELEMENTOS PRINCIPALES */
+
+
+.temporada__principal {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; /* Centra todo verticalmente */
+    padding: 50px 0; /* Espaciado superior e inferior */
+    background-color: #F5F5F5; 
+}
+
+.seccion__temporada {
+    display: flex;
+    flex-direction: column; /* Se apila en móviles */
+    max-width: 1200px;
+    width: 90%;
+    text-align: center;
+    gap: 20px; /* Espaciado entre elementos */
+}
+
+.contenido__temporada {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.titulo__temporada{
+    font-size: 50px;
+    color: #a35f05;
+    line-height: 1;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.texto__temporada {
+    flex: 1; /* Permite que el texto ocupe el espacio necesario */
+    text-align: left; /* Alineación del texto */
+    text-align: justify;
+}
+
+.img__temporada {
+    max-width: 400px; /* Tamaño máximo de la imagen */
+    width: min(100%, 400px); /* Se adapta al tamaño del contenedor */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 10px; 
+    object-fit: cover; /* Ajusta la imagen sin distorsión */
+}
+
+
+
+/* SECCION NOSOTROS */
+
+.nosotros{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height:50vh ;
+    width: 100%;
+    margin: 30px;
+
+}
+
+.titulo__nosotros{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 40px;
+    color: #a35f05;;
+}
+
+.texto__nosotros {
+    width: 90%;               
+    max-width: 700px;        
+    font-size: 16px;          
+    text-align: justify;      
+}
+
+
+.boton__nosotros {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #76461b;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.boton__nosotros:hover{
+    color: #a35f05;
+    background-color: #d1b78f;
+}
+
+
+/* CONTENEDOR CARDS*/
+.content__block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+    overflow-x: hidden; /* Evita el desbordamiento lateral */
+}
+
+.posicionamiento__block {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-wrap: wrap; /* Permite que los elementos bajen si no hay espacio */
+    flex-direction: row;
+}
+
+.block__izq {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: #ad9474;
+
+}
+
+.text__block{
+    max-width: 90%;
+    width: 700px;
+    padding: 10px;
+    text-align: justify;
+    font-size: 15px;
+
+}
+
+.block__der{
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: #ad9474;
+}
+
+.img__block {
+    width: 100%; /* Se adapta al tamaño del contenedor */
+    max-width: 600px; /* Establece un límite máximo */
+    height: auto; /* Mantiene la proporción */
+
+}
+
+
+.block__title{
+    font-size: 30px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #875101d2;    
+}
+
+
+
+/*********SLIDES CARROUSEL *******************************/
+.container-carrusel{
+    display: flex;
+    margin-top: 5em;
+}
+
+
+.carousel {
+    width: 500px;
+    height: 570px;
+    overflow: hidden;
+    position: relative;
+    margin: 30px  0px 30px 30px;
+}
+
+.slides {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+/* Ocultamos los inputs */
+input[type="radio"] {
+    display: none;
+}
+
+/* Mueve el carrusel al seleccionar un input */
+#slide1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+/****************************/
+#slide4:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#slide5:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#slide6:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+/**************************/
+#slide7:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#slide8:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#slide9:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+
+/* Navegación con puntos */
+.navigation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.navigation label {
+    width: 10px;
+    height: 10px;
+    background: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+    background: #333;
+}
+
+
+
+/**SECCION DE FORM CON IMAGEN*********/
+.contenedor__form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    margin-bottom: 40px;
+    margin-top: 90px;
+    background-color:#e4e3e3;
+}
+
+.layout__form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 450px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px 0px #ababab;
+    color: #ad9474;
+}
+
+.img__form{
+    width: 270px;
+    height: 500px;
+    border-radius: 30px;
+}
+
+li {
+    margin: 30px;
+}
+
+textarea{
+    padding: 7px;
+    border-radius: 20px;
+    margin-top: 4px;
+    height: 39px;
+    width: 100%;
+    border-width: 1px;
+    border-color: #ad9474;
+}
+
+
+input, text {
+    padding: 7px;
+    border-radius: 20px;
+    margin-top: 4px;
+    height: 29px;
+    width: 100%;
+    border-width: 1px;
+    border-color: #ad9474;
+}
+
+ul {
+    width: 80%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.boton__form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ad9474;
+    width: 25%;
+    height: 30px;
+    margin-left: 30px;
+    margin-bottom: 9px;
+    color: white;
+    border-style: none;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+/*****************SECCION DE CARD CON IMG**************************/
+.contenedor__card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.layout__card{
+    display: flex;
+    max-width: 100%;
+    height: auto;
+    background-color:rgb(173, 148, 116, 0.3);
+    padding: 20px 0px;
+    margin: 20px 40px 20px 20px;
+    box-shadow: 0px 9px 9px 0px rgb(171, 171, 171, 0.3);
+    border-radius: 15px;
+}
+
+.text__card{
+    text-align: justify;
+    padding: 5px 12px;
+    width:270px;
+}
+
+.img__card {
+    width: 300px; /* Ajusta la imagen a tu gusto */
+    object-fit: cover; /* Para mantener la proporción */
+    border-radius: 15px;
+    margin-right: 8px;
+}
+
+
+.button__card{
+    margin-top: 6px;
+    padding: 12px 25px 15px 25px;
+    background-color: #76461b;
+    color: white;
+    border-style: none;
+    border-radius: 20px;
+    margin-left: 15px;
+}
+
+
+/*********FOOTER***************/
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.footer-section {
+    max-width: 200px;
+}
+
+.footer-section h3, .footer-section h4 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.botonFooter{
+    margin-top: 10px;
+    height: 30px;
+    width: 8em;
+    border-style: none;
+    background-color: #ad9474;
+    border-radius: 20px;
+    color: white;
+}
+
+
+
+
+
+/****** PAGINA NOSOTROS  ************/
+.nosotros__pagina{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.titulo__nosotros{
+    padding: 20px;
+    font-size: 4rem;
+}
+
+.intro__nosotros{
+    font-size: 17px;
+    text-align:center;
+    font-style: italic;
+    width: 70%;
+    color:#ad9474;
+}
+
+.texto__nosotrosPrincipios{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    padding-top: 20px;
+    margin-bottom: 35px;
+    font-size: 19px;
+    padding: 6px;
+    text-align: justify;
+    
+}
+
+
+/**********************/
+/* PAGINA TENDENCIAS */
+
+.temporada__tendencias{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+.subtitulo__tendencia {
+    text-align: center; 
+    padding: 10px; 
+}
+
+.titulo_tendencia{
+    display:flex;
+    justify-content: center;
+    font-size: 50px;
+    text-align: center;
+    line-height: 1.2;
+    padding: 0px 50px;
+}
+
+.texto__tendencia{
+    padding: 10px 50px;
+    text-align: center;
+    line-height: 2;
+}
+/**/
+
+.bloque__tendencias{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: auto;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.bloque__der{
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    padding: 25px;
+    font-size: 25px;
+}
+
+
+
+h6{
+    color: #a35f05;
+    font-size: 45px;
+    text-align:start;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.bloque__texto{
+    padding: 20px 10px;
+    text-align: justify;
+    font-size: 25px;
+    line-height: 2;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.boho__imagenes{
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
+}
+
+.boho__img{
+    max-height: 700px;
+    margin: 9px;
+}
+
+
+
+/*************QUERIES****************************/
+
+/* 1400 */
+@media (max-width: 1400px) {
+    .text__block {
+        font-size: 1em;
+        padding: 25px;
+    }
+
+}
+
+
+
+
+/* 1200px */
+@media (max-width: 1200px) {
+    .text__block{
+        font-size: 1em;
+        padding-bottom: 25px;
+    }
+
+
+    .contenedor__card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto; /* Mejor usa auto para que se ajuste según el contenido */
+        flex-direction: column;
+        gap: 20px; /* Añade separación entre las tarjetas */
+        padding: 20px; /* Para que no queden pegadas al borde */
+    }
+
+
+    .layout__card {
+        display: flex;
+        justify-content: space-around;
+        max-width: 100%;
+        height: auto;
+        background-color: rgb(173, 148, 116, 0.3);
+        box-shadow: 0px 9px 9px 0px rgb(171, 171, 171, 0.3);
+        border-radius: 15px;
+       
+    }
+
+    .position__text {
+        flex: 1; /* Permite que el texto ocupe todo el espacio sobrante */
+        max-width: 100%; /* Que nunca se limite el ancho */
+        padding: 15px; 
+    }
+
+    .img__card {
+        width: 300px; /* Tamaño fijo para la imagen */
+        object-fit: cover; /* Mantiene la proporción de la imagen */
+        padding: 8px;
+    }
+
+
+       /* tendencias pagina*/
+       .temporada__tendencias {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 25px;
+      
+    }
+}
+
+
+
+
+/* 992px */
+@media (max-width: 992px) {
+    .navbar__links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    /**/
+    .contenido__temporada {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .titulo__temporada {
+        font-size: 30px;
+    }
+
+    .texto__temporada {
+        font-size: 17px;
+    }
+
+   /**/
+    .posicionamiento__block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap; /* Permite que los elementos bajen si no hay espacio */
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+   
+    .block__izq {
+        display: flex;
+        flex: 1;
+        background-color: #efeae3;
+        width: 100%;
+        height: 600px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text__block{
+        font-size: 15px;
+        padding-bottom: 25px;
+    }
+
+    .img__block {
+        max-width: 80%;
+        height: 80%;
+    }
+
+    /**/
+    .container-carrusel {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+   
+    /**/
+  
+
+    .titulo_tendencia{
+        padding-left: 15px;
+    }
+}
+
+
+
+
+
+/* 768px */
+@media (max-width: 768px) {
+    .texto__temporada{
+        font-size: 12px;
+    }
+
+    .layout__form {
+        max-width: 90%;
+    }
+
+    .img__form {
+        display: none;
+    }
+
+    .img__card {
+        display: none;
+    }
+
+    
+    .text__card{
+        padding: 0px 20px;
+    }
+
+    .text__block{
+        font-size: 15px;
+        padding-bottom: 20px;
+    }
+
+    /* tendencias pagina*/
+    .temporada__tendencias {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 25px;
+      
+    }
+
+    
+    .boho__imagenes{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .bloque__tendencias {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+        height: auto;
+        /* width: 90%; */
+        margin: 10px;
+        /* padding: 25px; */
+        font-size: 25px;
+    }
+   
+    /**/
+    .footer-section div{
+        margin: 8px 0px;
+    }
+
+    .footer-section ul{
+        width: 100%;
+    }
+
+    .footer-section h4{
+        margin: 6px 0;
+    }
+
+}
+
+@media (max-width: 576px){
+
+     /**/
+    .nosotros{
+        height: auto;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+
+     .titulo__nosotros{
+        font-size: 40px;
+    }
+
+    .texto__nosotrosPrincipios{
+        font-size: 15px;
+    }
+    /**/
+    .footer-section div{
+        margin: 8px 0px;
+    }
+
+    .footer-section ul{
+        width: 100%;
+    }
+
+    .footer-section h4{
+        margin: 6px 0;
+    }
+
+    /**/
+    .titulo_tendencia {
+        font-size: 33px;
+        padding-left: 15px;
+    }
+
+    h6{
+        font-size: 25px;
+    }
+
+    .bloque__texto {
+        padding: 20px 10px;
+        text-align: justify;
+        font-size: 15px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+}
+
+
+
+
+/* 375px */
+@media (max-width: 376px) {
+    .navbar__links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    /**/
+    .nosotros{
+        height: auto;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    /**/
+    .img__tendenciaPortada{
+        max-width: 100%;
+    }
+
+    h6{
+        font-size: 25px;
+    }
+
+    .titulo_tendencia {
+        font-size: 33px;
+        padding-left: 15px;
+    }
+
+
+    .bloque__texto {
+        padding: 20px 10px;
+        text-align: justify;
+        font-size: 15px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    /**/
+   
+    .footer-section div{
+        margin: 8px 0px;
+    }
+
+    .footer-section ul{
+        width: 100%;
+    }
+
+    .footer-section h4{
+        margin: 6px 0;
+    }
+
+    /**/
+    .titulo__nosotros{
+        font-size: 40px;
+    }
+
+    .texto__nosotrosPrincipios{
+        font-size: 15px;
+    }
+}
